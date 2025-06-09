@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Аналіз музики</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form id="uploadForm" enctype="multipart/form-data" >
+        <input type="file" id="audio-file" name="file" required>
+        <button type="submit" id="analyze-btn">Аналізувати</button>
+        <pre id="output"></pre>
+    </form>
+
+    <div id="result"></div>
+    
+    <div id="plots">
+        <img id="mfccPlot" style="display:none; max-width:400px;">
+        <img id="centroidPlot" style="display:none; max-width:400px;">
+        <img id="zcrPlot" style="display:none; max-width:400px;">
+    </div>
+    
+    <button id="findSimilar" style="display: none;">Знайти схожі</button>
+    <ul id="similarTracks"></ul>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

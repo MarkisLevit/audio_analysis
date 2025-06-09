@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sound analysis</title>
+    <meta property="og:title" content="audio analysis" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /><meta charset="utf-8" /><meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {   color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body
+    >
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+      <link href="static/index.css" rel="stylesheet" /><div class="home-container1"
+        ><header class="home-header1"
+          ><header data-thq="thq-navbar" class="home-navbar-interactive">
+            <div class="home-branding1">
+              <span class="home-text100">sound analysis</span>
+            </div>
+            <div
+              data-thq="thq-navbar-nav"
+              data-role="Nav"
+              class="home-desktop-menu">
+              <nav
+                data-thq="thq-navbar-nav-links"
+                data-role="Nav"
+                class="home-nav1"
+                ><div class="home-right"
+                  ><nav-links-wrapper class="nav-links-wrapper"
+                    ><!--NavLinks component--><div class="nav-links-links"
+                      ><span class="navLink"><span>library</span></span
+                      ><span class="navLink"><span>PDFdiploma</span></span
+                      ><span class="navLink"><span>code</span></span></div
+                    ></nav-links-wrapper
+                  ><div class="home-button1"
+                    ><button class="home-work-with-us1 button"
+                      ><span class="home-text101">account</span
+                      ><img
+                        alt="image"
+                        src="static/hamburger.svg"
+                        class="home-image10" /></button></div></div></nav></div
+            >
+            <div data-thq="thq-burger-menu" class="home-burger-menu"
+              ><button class="home-work-with-us2 button"
+                ><span class="home-text102">account</span
+                ><img
+                  alt="image"
+                  src="static/hamburger.svg"
+                  class="home-image11" /></button></div
+            ><div data-thq="thq-mobile-menu" class="home-mobile-menu"
+              ><div
+                data-thq="thq-mobile-menu-nav"
+                data-role="Nav"
+                class="home-nav2"
+                ><div class="home-top"
+                  ><div class="home-branding2"
+                    ><span class="home-text103">sound analysis</span></div
+                  ><div data-thq="thq-close-menu" class="home-menu-close"
+                    ><svg viewBox="0 0 1024 1024" class="home-icon1">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path></svg></div></div
+                ><nav
+                  data-thq="thq-mobile-menu-nav-links"
+                  data-role="Nav"
+                  class="home-middle"
+                  ><div class="home-links"
+                    ><span class="navLink">code</span
+                    ><span class="navLink">Diploma PDF</span
+                    ><span class="navLink">contact</span></div
+                  ><button class="home-work-with-us3 button"
+                    ><span class="home-text104">account</span></button
+                  ></nav
+                ></div
+              ></div
+            > 
+            </header
+          ></header
+        ><hero-wrapper class="hero-wrapper"
+          ><!--Hero component--><div class="hero-hero"
+            ><div class="hero-header"
+              ><h1 class="hero-text1"
+                ><fragment class="home-fragment"
+                  ><span class="home-text105"
+                    >Аналіз музичних творів
+                  </span></fragment
+                ></h1
+              ><img
+                alt="image"
+                src="static/mouse.svg"
+                class="hero-image1" /></div
+            ><img
+                alt="image"
+                src="static/6265099.jpg"
+                class="hero-image2" /></div></hero-wrapper>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+        <div class="home-who">
+          <div class="home-header2">
+            <div class="home-heading1"
+              ><h2 class="home-text106"
+                >Завантаж мелодію та отримай результат аналізу!</h2
+              ><form id="uploadForm" enctype="multipart/form-data">
+                  <input type="file" id="audio-file" name="file" required class="home-textinput input" />
+                  <br>
+                  <br>
+                  <button type="submit" id="analyze-btn" class="home-button2 button">Аналізувати</button>
+                </form>
+                <div id="result"></div>
+                <div class="uploaded-files"></div>
+            </div>
+          </div>
+          <div id="plots" class="plots-container">
+            <div class="plot-block">
+              <div class="plot-title">MFCC</div>
+              <img id="mfccPlot" style="display:none; max-width:1600px;">
+            </div>
+            <div class="plot-block">
+              <div class="plot-title">Spectral Centroid</div>
+              <img id="centroidPlot" style="display:none; max-width:1600px;">
+            </div>
+            <div class="plot-block">
+              <div class="plot-title">Zero-Crossing Rate</div>
+              <img id="zcrPlot" style="display:none; max-width:1600px;">
+            </div>
+          </div>
+          <button id="findSimilar" style="display: none;" class="home-button2 button">Знайти схожі</button>
+          <ul id="similarTracks"></ul>
+          <div id="similarTracks" style="margin-top:20px;"></div>
+        </div>
+
+
+
+<script>
+document.getElementById('show-features-btn').onclick = async function() {
+  const featuresDiv = document.getElementById('features-list');
+  featuresDiv.innerHTML = 'Завантаження...';
+  try {
+    const response = await fetch('features.json');
+    if (!response.ok) throw new Error('Файл не знайдено');
+    const data = await response.json();
+    let html = '<h3>Характеристики аудіо:</h3><ul>';
+    html += `<li><b>Темп:</b> ${data.tempo} BPM</li>`;
+    html += `<li><b>MFCC:</b> [${data.mfcc[0].slice(0,5).join(', ')} ...]</li>`;
+    html += `<li><b>Chroma:</b> [${data.chroma[0].slice(0,5).join(', ')} ...]</li>`;
+    html += `<li><b>Spectral Centroid:</b> [${data.spectral_centroid[0].slice(0,5).join(', ')} ...]</li>`;
+    html += `<li><b>Zero Crossing Rate:</b> [${data.zero_crossing_rate[0].slice(0,5).join(', ')} ...]</li>`;
+    html += '</ul>';
+    featuresDiv.innerHTML = html;
+  } catch (e) {
+    featuresDiv.innerHTML = 'Не вдалося завантажити характеристики.';
+  }
+}; 
+</script>
+          <div class="home-preview"
+            ><div class="home-image12"
+              ><img
+                alt="image"
+                src="static/preview.svg"
+                class="home-image13" /></div
+            ><div class="home-video1"
+              ><video
+                src=""
+                poster="static/video.svg"
+                class="home-video2"
+              ></video></div></div></div
+        ><div class="home-information"
+          ><div class="home-purpose"
+            ><span class="home-caption1">What we do</span
+            ><span class="home-description1"
+              >We arrive at business-reflective design decisions by integrating
+              strategic thinking with mature design and transferrable
+              functionality. From helping transform the image of a legacy brand
+              to creating an ultra-modern identity for a space tech startup -
+              we’re always up for a fresh challenge.</span
+            ></div
+          ><div class="home-industries"
+            ><span class="home-caption2">INDUSTRIES</span
+            ><div class="home-list"
+              ><div data-role="accordion-container" class="home-accordion"
+                ><div data-role="accordion-trigger" class="accordion-trigger"
+                  ><span class="home-title10">Education</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text108">Perspiciatis</span
+                  ><span class="home-text109">Nemo voluptatem</span
+                  ><span class="home-text110">Dolore magnam</span
+                  ><span class="home-text111">Tempora</span
+                  ><span class="home-text112">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item1"
+                ><div data-role="accordion-trigger" class="accordion-trigger"
+                  ><span class="home-title11">B2B</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text113">Perspiciatis</span
+                  ><span class="home-text114">Nemo voluptatem</span
+                  ><span class="home-text115">Dolore magnam</span
+                  ><span class="home-text116">Tempora</span
+                  ><span class="home-text117">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item2"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger3 accordion-trigger accordion-trigger-active"
+                  ><span class="home-title12">Tech Startup</span></div
+                ><div
+                  data-role="accordion-content"
+                  class="accordion-content accordion-content-active"
+                  ><span class="home-text118">Perspiciatis</span
+                  ><span class="home-text119">Nemo voluptatem</span
+                  ><span class="home-text120">Dolore magnam</span
+                  ><span class="home-text121">Tempora</span
+                  ><span class="home-text122">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item3"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger4 accordion-trigger"
+                  ><span class="home-title13">Ecommerce</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text123">Perspiciatis</span
+                  ><span class="home-text124">Nemo voluptatem</span
+                  ><span class="home-text125">Dolore magnam</span
+                  ><span class="home-text126">Tempora</span
+                  ><span class="home-text127">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item4"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger5 accordion-trigger"
+                  ><span class="home-title14">Marketing</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text128">Perspiciatis</span
+                  ><span class="home-text129">Nemo voluptatem</span
+                  ><span class="home-text130">Dolore magnam</span
+                  ><span class="home-text131">Tempora</span
+                  ><span class="home-text132">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item5"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger6 accordion-trigger"
+                  ><span class="home-title15">SAAS</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text133">Perspiciatis</span
+                  ><span class="home-text134">Nemo voluptatem</span
+                  ><span class="home-text135">Dolore magnam</span
+                  ><span class="home-text136">Tempora</span
+                  ><span class="home-text137">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item6"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger7 accordion-trigger"
+                  ><span class="home-title16">Media</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text138">Perspiciatis</span
+                  ><span class="home-text139">Nemo voluptatem</span
+                  ><span class="home-text140">Dolore magnam</span
+                  ><span class="home-text141">Tempora</span
+                  ><span class="home-text142">Reprehenderit qui</span></div
+                ></div
+              ><div data-role="accordion-container" class="home-item7"
+                ><div
+                  data-role="accordion-trigger"
+                  class="home-trigger8 accordion-trigger"
+                  ><span class="home-title17">Social</span></div
+                ><div data-role="accordion-content" class="accordion-content"
+                  ><span class="home-text143">Perspiciatis</span
+                  ><span class="home-text144">Nemo voluptatem</span
+                  ><span class="home-text145">Dolore magnam</span
+                  ><span class="home-text146">Tempora</span
+                  ><span class="home-text147">Reprehenderit qui</span></div
+                ></div
+              ></div
+            ><div
+              ><div class="home-container5"
+                ><script>
+                      /*
+                  Accordion - Code Embed
+                  */
+
+                  /* listenForUrlChangesAccordion() makes sure that if you changes pages inside your app,
+                  the Accordions will still work*/
+
+                  const listenForUrlChangesAccordion = () => {
+                        let url = location.href;
+                        document.body.addEventListener(
+                          'click',
+                          () => {
+                            requestAnimationFrame(() => {
+                              if (url !== location.href) {
+                                runAccordionCodeEmbed();
+                                url = location.href;
+                              }
+                            });
+                          },
+                          true
+                        );
+                      };
+
+                  runAccordionCodeEmbed()
+                  listenForUrlChangesAccordion()
+
+                  /*
+                  Here's what the above is doing:
+                      1. Selects all accordion containers, contents, and icons
+                      2. Hides all accordion contents
+                      3. Adds an event listener to each accordion container
+                      4. When an accordion container is clicked, it:
+                          - Hides all accordion contents
+                          - Resets all icon transforms to 0deg (default)
+                          - Checks if this container has class 'accordion-open'
+                              - If it does, it removes class 'accordion-open'
+                              - If it doesn't, it:
+                                  - Removes class 'accordion-open' from all containers
+                                  - Adds class 'accordion-open' to this container
+                                  - Shows accordion content
+                                  - Rotates accordion icon 180deg
+                  */
+                </script>
+              </div></div
+            ></div
+          ></div
+        ><div class="home-section1"
+          ><div class="home-case-studies"
+            ><div class="home-caption3"
+              ><span class="home-text148">Case Studies</span
+              ><div class="home-date-range"
+                ><span class="home-text149">2022</span
+                ><span class="home-text150">——</span
+                ><span class="home-text151">2019</span></div
+              ></div
+            ><div class="home-gallery1"
+              ><div class="home-row1"
+                ><div class="home-case1"
+                  ><img
+                    alt="image"
+                    src="static/study%20%231-1300w.png"
+                    class="home-image14"
+                  /><div class="home-heading2"
+                    ><span class="home-text152">Perspiciatis</span
+                    ><span class="home-text153"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ><div class="home-case2"
+                  ><img
+                    alt="image"
+                    src="static/study%20%232-1400w.png"
+                    class="home-image15"
+                  /><div class="home-heading3"
+                    ><span class="home-text154">Nemo voluptatem</span
+                    ><span class="home-text155"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ></div
+              ><div class="home-row2"
+                ><div class="home-case3"
+                  ><img
+                    alt="image"
+                    src="static/study%20%233-1400w.png"
+                    class="home-image16"
+                  /><div class="home-heading4"
+                    ><span class="home-text156">Dolore magnam</span
+                    ><span class="home-text157"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ><div class="home-case4"
+                  ><img
+                    alt="image"
+                    src="static/study%20%234-1400w.png"
+                    class="home-image17"
+                  /><div class="home-heading5"
+                    ><span class="home-text158">Tempora</span
+                    ><span class="home-text159"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ></div
+              ><div class="home-row3"
+                ><div class="home-case5"
+                  ><img
+                    alt="image"
+                    src="static/study%20%235-1300w.png"
+                    class="home-image18"
+                  /><div class="home-heading6"
+                    ><span class="home-text160">Reprehenderit qui</span
+                    ><span class="home-text161"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ><div class="home-case6"
+                  ><img
+                    alt="image"
+                    src="static/study%20%236-1300w.png"
+                    class="home-image19"
+                  /><div class="home-heading7"
+                    ><span class="home-text162">Ullamco laboris</span
+                    ><span class="home-text163"
+                      >Lorem ipsum dolor sit amet consectetur adipiscing.</span
+                    ></div
+                  ></div
+                ></div
+              ></div
+            ></div
+          ><div class="home-testimonials"
+            ><div class="home-header3"
+              ><span class="home-caption4">What our clients say</span
+              ><div class="home-controls"
+                ><svg
+                  id="quote-previous"
+                  viewBox="0 0 1024 1024"
+                  class="home-icon3"
+                >
+                  <path
+                    d="M670.165 737.835l-225.835-225.835 225.835-225.835c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331l256 256c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"
+                  ></path></svg
+                ><span class="home-text164">——</span
+                ><svg
+                  id="quote-next"
+                  viewBox="0 0 1024 1024"
+                  class="home-icon5"
+                >
+                  <path
+                    d="M414.165 798.165l256-256c16.683-16.683 16.683-43.691 0-60.331l-256-256c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l225.835 225.835-225.835 225.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0z"
+                  ></path></svg></div></div
+            ><div class="home-row4"
+              ><div class="quote"
+                ><testimonial-wrapper
+                  class="testimonial-wrapper"
+                  rootclassname="testimonialundefined"
+                  ><!--Testimonial component--><div
+                    class="testimonial-testimonial testimonialroot-class-name"
+                    ><div class="testimonial-content"
+                      ><img
+                        alt="image"
+                        src="static/apostrophe.svg"
+                        class="testimonial-icon"
+                      /><span class="testimonial-text"
+                        ><span
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.</span
+                        ></span
+                      ></div
+                    ><div class="testimonial-author1"
+                      ><img
+                        alt="image"
+                        src="https:/images.unsplash.com/photo-1492288991661-058aa541ff43?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDl8fHBvdHJhaXR8ZW58MHx8fHwxNjY5NTY3NDE5&amp;ixlib=rb-4.0.3&amp;w=200"
+                        class="testimonial-author2"
+                      /><div class="testimonial-details"
+                        ><span class="testimonial-name"
+                          ><span>Joanna Smith</span></span
+                        ><span class="testimonial-origin"
+                          ><span>@zeng</span></span
+                        ></div
+                      ></div
+                    ><div
+                      class="testimonial-divider"
+                    ></div></div></testimonial-wrapper></div
+              ><div class="home-quote2 quote"
+                ><testimonial-wrapper-z8m5
+                  class="testimonial-wrapper-z8m5"
+                  rootclassname="testimonialundefined"
+                  ><!--Testimonial component--><div
+                    class="testimonial-testimonial1 testimonialroot-class-name1"
+                    ><div class="testimonial-content1"
+                      ><img
+                        alt="image"
+                        src="static/apostrophe.svg"
+                        class="testimonial-icon1"
+                      /><span class="testimonial-text1"
+                        ><span
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.</span
+                        ></span
+                      ></div
+                    ><div class="testimonial-author3"
+                      ><img
+                        alt="image"
+                        src="https:/images.unsplash.com/photo-1618151313441-bc79b11e5090?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDEzfHxwb3RyYWl0fGVufDB8fHx8MTY2OTcyODk4OA&amp;ixlib=rb-4.0.3&amp;h=200"
+                        class="testimonial-author4"
+                      /><div class="testimonial-details1"
+                        ><span class="testimonial-name1"
+                          ><span>Coco White</span></span
+                        ><span class="testimonial-origin1"
+                          ><span>@white_co</span></span
+                        ></div
+                      ></div
+                    ><div
+                      class="testimonial-divider1"
+                    ></div></div></testimonial-wrapper-z8m5></div
+              ><div class="quote"
+                ><testimonial-wrapper-2j7g
+                  class="testimonial-wrapper-2j7g"
+                  rootclassname="testimonialundefined"
+                  ><!--Testimonial component--><div
+                    class="testimonial-testimonial2 testimonialroot-class-name2"
+                    ><div class="testimonial-content2"
+                      ><img
+                        alt="image"
+                        src="static/apostrophe.svg"
+                        class="testimonial-icon2"
+                      /><span class="testimonial-text2"
+                        ><span
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.</span
+                        ></span
+                      ></div
+                    ><div class="testimonial-author5"
+                      ><img
+                        alt="image"
+                        src="https:/images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHBvdHJhaXR8ZW58MHx8fHwxNjY5NzI4OTg4&amp;ixlib=rb-4.0.3&amp;h=200"
+                        class="testimonial-author6"
+                      /><div class="testimonial-details2"
+                        ><span class="testimonial-name2"
+                          ><span>Joanna Smith</span></span
+                        ><span class="testimonial-origin2"
+                          ><span>@zeng</span></span
+                        ></div
+                      ></div
+                    ><div
+                      class="testimonial-divider2"
+                    ></div></div></testimonial-wrapper-2j7g></div
+              ><div class="home-gradiant"></div></div></div></div
+        ><div class="home-book"
+          ><div class="home-content2"
+            ><div class="home-left"
+              ><h2 class="home-text165"
+                >Book a 15 minutes consultation to check how can we help you</h2
+              ><button class="home-button3 button"
+                ><span class="home-text166">book a call</span></button
+              ></div
+            ><img
+              alt="image"
+              src="static/message.svg"
+              class="home-image20" /></div></div
+        ><div class="home-section2"
+          ><div class="home-about-us"
+            ><div class="home-header4"
+              ><span class="home-caption5">About us</span
+              ><h2 class="home-description2"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor.</h2
+              ></div
+            ><div class="home-statistics"
+              ><div class="home-statistic1"
+                ><span class="home-text167">25</span
+                ><span class="home-text168">Years of experience</span></div
+              ><div class="home-statistic2"
+                ><span class="home-text169">40+</span
+                ><span class="home-text170"
+                  >Years of Experts on board</span
+                ></div
+              ><div class="home-statistic3"
+                ><span class="home-text171">300+</span
+                ><span class="home-text172">Finished projects</span></div
+              ><div class="home-statistic4"
+                ><span class="home-text173">3</span
+                ><span class="home-text174">Offices worldwide</span></div
+              ></div
+            ><div class="home-dna"
+              ><span class="home-caption6">Our DNA</span
+              ><span class="home-description3"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.</span
+              ><span class="home-description4"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.</span
+              ></div
+            ><div class="home-gallery2"
+              ><img
+                alt="image"
+                src="static/linkedin-sales-solutions-hrhjn6ztgrm-unsplash%201-700w.png"
+                class="home-image21" /><img
+                alt="image"
+                src="static/austin-distel-800w.png"
+                class="home-image22" /></div
+            ><div class="home-recruit"
+              ><h2 class="home-text175"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor.</h2
+              ><div class="home-sections"
+                ><div class="home-section3"
+                  ><span class="home-text176">lumenco laboris</span
+                  ><span class="home-text177"
+                    >Minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat</span
+                  ></div
+                ><div class="home-section4"
+                  ><span class="home-text178">Adipiscing elit</span
+                  ><span class="home-text179"
+                    >Minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat</span
+                  ></div
+                ><div class="home-section5"
+                  ><span class="home-text180">Dolor sit</span
+                  ><span class="home-text181"
+                    >Minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat</span
+                  ></div
+                ><div class="home-section6"
+                  ><span class="home-text182">Huiposcing</span
+                  ><span class="home-text183"
+                    >Minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat</span
+                  ></div
+                ></div
+              ><button class="home-button4 button"
+                ><span class="home-text184"
+                  ><span>be part of our team</span
+                  ><br /></span></button></div></div></div
+        ><footer class="home-footer"
+          ><div class="home-header5"
+            ><span class="home-branding3">hola studio</span
+            ><div class="home-socials1"
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link13"
+                ><img
+                  alt="image"
+                  src="static/facebook%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link14"
+                ><img
+                  alt="image"
+                  src="static/twitter%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link15"
+                ><img
+                  alt="image"
+                  src="static/dribbble%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link16"
+                ><img
+                  alt="image"
+                  src="static/instagram%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link17"
+                ><img
+                  alt="image"
+                  src="static/linkedin%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link18"
+                ><img
+                  alt="image"
+                  src="static/youtube%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link19"
+                ><img
+                  alt="image"
+                  src="static/telegram%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link20"
+                ><img
+                  alt="image"
+                  src="static/medium%20-%20negative.svg"
+                  class="social" /></a></div></div
+          ><div class="home-content3"
+            ><div class="home-contact"
+              ><span class="home-email">hola@hola.studio</span
+              ><span class="home-number">+4 222.345.987</span></div
+            ><div class="home-links-row"
+              ><div class="home-links-column1"
+                ><span class="home-link21">Responsive Web Design</span
+                ><span class="home-link22">Design to Code</span
+                ><span class="home-link23">Static Website Designer</span
+                ><span class="home-link24">Static Website Generator</span></div
+              ><div class="home-links-column2"
+                ><span class="home-link25">About </span
+                ><span class="home-link26">Team</span
+                ><span class="home-link27">News</span
+                ><span class="home-link28">Partners</span
+                ><span class="home-link29">Careers</span
+                ><span class="home-link30">Press &amp; Media</span></div
+              ></div
+            ></div
+          ><div class="home-locations"
+            ><div class="home-location1"
+              ><span class="home-title18">United States</span
+              ><span class="home-details17"
+                ><span>90210 Broadway Street</span><br /><span
+                  >San Francisco</span
+                ><br /><br /><span>hola_us@hola.studio</span></span
+              ></div
+            ><div class="home-location2"
+              ><span class="home-title19">Romania</span
+              ><span class="home-details18"
+                ><span>115 Turzii Road</span><br /><span>Cluj Napoca</span
+                ><br /><br /><span>hola_ro@hola.studio</span></span
+              ></div
+            ><div class="home-location3"
+              ><span class="home-title20">United Kingdom</span
+              ><span class="home-details19"
+                ><span>87–135 Brompton Road</span><br /><span>London</span
+                ><br /><br /><span>hola_uk@hola.studio</span></span
+              ></div
+            ><div class="home-location4"
+              ><span class="home-title21">Spain</span
+              ><span class="home-details20"
+                ><span>34-36 Carrer de Tele</span><br /><span>Barcelona</span
+                ><br /><br /><span>hola_sp@hola.studio</span></span
+              ></div
+            ></div
+          ><div class="home-socials2"
+            ><div class="home-row5"
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/facebook%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/twitter%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/dribbble%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/instagram%20-%20negative.svg"
+                  class="social" /></a></div
+            ><div class="home-row6"
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/linkedin%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/youtube%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/telegram%20-%20negative.svg"
+                  class="social" /></a
+              ><a
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><img
+                  alt="image"
+                  src="static/medium%20-%20negative.svg"
+                  class="social" /></a></div></div></footer></div
+    ></div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script></body
+></html>

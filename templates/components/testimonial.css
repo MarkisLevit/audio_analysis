@@ -1,0 +1,130 @@
+.testimonial-testimonial {
+  gap: var(--dl-layout-space-fiveunits);
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-color: #61616B;
+  padding-right: var(--dl-layout-space-fiveunits);
+  flex-direction: column;
+  border-right-width: 1px;
+}
+ 
+.testimonial-content {
+  gap: var(--dl-layout-space-threeunits);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+ 
+.testimonial-icon {
+  height: 40px;
+  object-fit: cover;
+}
+ 
+.testimonial-text {
+  color: rgb(255, 255, 255);
+  width: 400px;
+  font-size: 24px;
+  line-height: 44px;
+}
+ 
+.testimonial-author1 {
+  gap: var(--dl-layout-space-oneandhalfunits);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+ 
+.testimonial-author2 {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--dl-layout-radius-round);
+}
+ 
+.testimonial-details {
+  gap: var(--dl-layout-space-unit);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+ 
+.testimonial-name {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+ 
+.testimonial-origin {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  line-height: 30px;
+}
+ 
+.testimonial-divider {
+  display: none;
+  align-items: flex-start;
+  flex-direction: column;
+}
+ 
+
+ 
+
+ 
+
+ 
+@media(max-width: 991px) {
+  .testimonial-testimonial {
+    gap: var(--dl-layout-space-unit);
+    margin-right: 0px;
+    padding-right: 0px;
+    border-right-width: 0px;
+  }
+  .testimonial-content {
+    gap: var(--dl-layout-space-oneandhalfunits);
+  }
+  .testimonial-icon {
+    height: 24px;
+  }
+  .testimonial-text {
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .testimonial-author1 {
+    gap: var(--dl-layout-space-unit);
+  }
+  .testimonial-author2 {
+    width: 40px;
+    height: 40px;
+  }
+  .testimonial-details {
+    gap: var(--dl-layout-space-halfunit);
+  }
+  .testimonial-name {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .testimonial-origin {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .testimonial-divider {
+    width: 100px;
+    height: 1px;
+    display: flex;
+    background-color: #61616B;
+  }
+  .testimonialroot-class-name {
+    width: 100%;
+  }
+  .testimonialroot-class-name1 {
+    width: 100%;
+  }
+  .testimonialroot-class-name2 {
+    width: 100%;
+  }
+}
